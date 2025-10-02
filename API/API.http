@@ -1,0 +1,6 @@
+@ASMTasks_HostAddress = http://localhost:5078
+
+GET {{ASMTasks_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
