@@ -1,5 +1,4 @@
-using API.Repositories;
-using API.Services;
+using API.DAOs;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -37,8 +36,7 @@ Environment.SetEnvironmentVariable("STRING_CONEXAO", builder.Configuration["Stri
 DbContext dbContext = new DbContext();
 builder.Services.AddSingleton(dbContext);
 
-builder.Services.AddScoped<SetoresRepository>();
-builder.Services.AddScoped<SetoresService>();
+builder.Services.AddScoped<SetoresDAO>();
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace API.Repositories
+namespace API.DAOs
 {
     public class DbContext
     {

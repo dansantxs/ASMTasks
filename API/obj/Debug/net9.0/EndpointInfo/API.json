@@ -2,7 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "Gerenciamento da API...",
-    "description": "<h3>Título <b>da API</b></h3>\n                                      <p>\n                                          Alguma descrição....\n                                      </p>",
+    "description": "<h3>Título <b>da API</b></h3>\r\n                                      <p>\r\n                                          Alguma descrição....\r\n                                      </p>",
     "contact": {
       "name": "Suporte Unoeste",
       "url": "https://www.unoeste.br",
