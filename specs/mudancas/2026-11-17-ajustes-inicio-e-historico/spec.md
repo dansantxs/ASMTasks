@@ -1,6 +1,6 @@
 # Ajustes no Início e no Histórico de Tarefas
 
-- **Status:** rascunho
+- **Status:** aprovada (Daniel, 2026-11-17)
 - **Pedido por:** Daniel, 2026-11-17 (com prints da tela)
 - **Branches:** uma por item, indicada em cada seção
 - **Versão:** <!-- preencher ao implementar -->
@@ -90,21 +90,18 @@ tem "Etapa e colaborador" e "Mais recentes primeiro". A opção "Etapa e colabor
 - Rever o tempo previsto de tarefas que estão no teste ou depois dele (A): só a etapa final sai.
 - Mudar a regra de crédito por elaboração (B): ela é a da comissão e continua a mesma.
 
-## Perguntas em aberto
+## Decisões
 
-1. **(A)** Tarefa que já saiu da elaboração (está no teste, por exemplo) e estourou o tempo de
-   execução continua em Em Atraso — Execução? *Recomendação:* sim, como hoje; o pedido é só tirar
-   as concluídas.
-2. **(B)** Você viu algum caso concreto de tarefa contada para a pessoa errada no ranking? Se sim,
-   qual, para eu conferir contra a regra. Sem caso, o item B vira só o ajuste de texto.
-3. **(D)** Para a tarefa que está na etapa escolhida, mostrar **todos** os eventos dela no
-   período (como ela chegou lá) ou só os eventos **daquela** etapa? *Recomendação:* todos (CA-D4).
-4. **(D)** Escolher a etapa final com a Situação em "Não concluídas" dá relatório vazio. Deixo
-   assim (os dois filtros são coerentes) ou, ao escolher a etapa final, a Situação muda sozinha
-   para "Concluídas"? *Recomendação:* deixar assim e mostrar a mensagem de vazio de sempre.
-5. **(E)** O desempate dentro do mesmo cliente: lançamento mais recente primeiro (CA-E2) ou etapa
-   e colaborador, como a ordem antiga? *Recomendação:* lançamento.
-6. **(E)** "Cliente" vira o padrão (CA-E3)? *Recomendação:* sim, já que substitui o padrão atual.
+Todas de 2026-11-17 (Daniel): valem as recomendações.
+
+1. **(A)** Tarefa que já saiu da elaboração e estourou o tempo de execução continua em Em Atraso —
+   Execução. Só a etapa final sai.
+2. **(B)** Sem caso concreto de crédito errado: o item B é só o ajuste de texto (CA-B1); CA-B2 e
+   CA-B3 servem de conferência.
+3. **(D)** A tarefa que está na etapa escolhida mostra todos os eventos dela no período (CA-D4).
+4. **(D)** Etapa final com Situação "Não concluídas" fica vazio, com a mensagem de vazio de sempre.
+5. **(E)** Desempate dentro do mesmo cliente: lançamento, mais recente primeiro (CA-E2).
+6. **(E)** "Cliente" é o padrão (CA-E3).
 
 ## Onde está no código
 
