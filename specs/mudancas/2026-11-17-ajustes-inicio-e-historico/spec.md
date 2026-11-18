@@ -1,13 +1,13 @@
 # Ajustes no Início e no Histórico de Tarefas
 
 - **Status:** aprovada (Daniel, 2026-11-17)
-- **Pedido por:** Daniel, 2026-11-17 (com prints da tela)
+- **Pedido por:** Daniel, 2026-11-17 (com prints da tela); item F em 2026-11-18
 - **Branches:** uma por item, indicada em cada seção
 - **Versão:** <!-- preencher ao implementar -->
 - **Specs de domínio afetadas:** `dashboard.md` (a escrever); `relatorios-historico.md` (a escrever);
   `dominio/comissao.md` (COM-10, COM-11, só citadas)
 
-Cinco ajustes pequenos e independentes, numa spec só. Cada seção vira uma branch.
+Seis ajustes pequenos e independentes, numa spec só. Cada seção vira uma branch.
 
 ## A. Tarefa concluída não fica "Em atraso" — `fix/inicio-atraso-sem-concluidas`
 
@@ -84,6 +84,21 @@ tem "Etapa e colaborador" e "Mais recentes primeiro". A opção "Etapa e colabor
 - **CA-E5.** A lista **Por Etapa** continua separada por etapa; a ordem escolhida vale dentro de
   cada faixa.
 
+## F. Colaborador só com tarefas concluídas aparece "sem tarefas" — `fix/inicio-sem-tarefas-ignora-concluidas`
+
+O card **Colaboradores sem Tarefas Atribuídas** do Início só mostra quem não é responsável por
+nenhuma tarefa em projeto ativo, e conta inclusive as tarefas na etapa final. Quem só tem tarefas
+em Concluído (projeto ainda aberto) não aparece, embora não tenha nada para fazer.
+
+- **CA-F1.** Dado um colaborador ativo cujas tarefas em projeto ativo estão todas na etapa final,
+  então ele aparece no card.
+- **CA-F2.** Dado um colaborador com pelo menos uma tarefa fora da etapa final em projeto ativo,
+  então ele não aparece, como hoje.
+- **CA-F3.** A descrição do card deixa claro que tarefa concluída não conta (texto sugerido:
+  "Colaboradores ativos sem nenhuma tarefa em aberto em projeto ativo.").
+- **CA-F4.** O card usa o mesmo universo da **Carga por Colaborador** (tudo que não está na etapa
+  final): quem aparece aqui não aparece lá, e vice-versa.
+
 ## Fora de escopo
 
 - Listas de atendimentos e de projetos do Início: a ordem delas não muda (E).
@@ -102,10 +117,11 @@ Todas de 2026-11-17 (Daniel): valem as recomendações.
 4. **(D)** Etapa final com Situação "Não concluídas" fica vazio, com a mensagem de vazio de sempre.
 5. **(E)** Desempate dentro do mesmo cliente: lançamento, mais recente primeiro (CA-E2).
 6. **(E)** "Cliente" é o padrão (CA-E3).
+7. **(F)** Item incluído em 2026-11-18 a pedido de Daniel, junto com o pedido do plano.
 
 ## Onde está no código
 
-- A, B, E: `Backend/API/DB/DAOs/DashboardDAO.cs` (`ObterTarefasAsync`, `ObterColaboradoresAsync`,
+- A, B, E, F: `Backend/API/DB/DAOs/DashboardDAO.cs` (`ObterTarefasAsync`, `ObterColaboradoresAsync`,
   `OrdemTarefas`); `Frontend/src/app/dashboard/page.js` (seletor de ordem, texto do ranking)
 - B: `Backend/API/DB/DAOs/TarefaSql.cs` (`CreditoElaboracao`)
 - C, D: `Frontend/src/app/relatorios/projetos-historico/page.js`; D também em
